@@ -1,0 +1,18 @@
+name: GitHub Actions
+run-name: ${{ github.actor }} is testing
+    push:
+        branches: [ main ]
+images: "one"
+jobs:
+  init:
+    runs-on: ubuntu-latest
+    images: "image-info"
+    strategy:
+      matrix:
+        node-varsion: [ 17.x ]
+    steps:
+      - uses: actions/checkout@v3
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - run: echo "🍏 This job's status is ${{ job.status }}."
