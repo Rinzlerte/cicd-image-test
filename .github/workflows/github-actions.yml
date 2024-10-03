@@ -2,7 +2,6 @@ name: GitHub Actions
 run-name: ${{ github.actor }} is testing
     push:
         branches: [ main ]
-images: "one"
 jobs:
   init:
     runs-on: ubuntu-latest
